@@ -172,7 +172,7 @@ export const PrivateEnquiry: React.FC<PrivateEnquiryProps> = ({ prefilledPropert
           </div>
 
           {/* Right Consultation Form Column */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 scroll-mt-28" id="enquiry-form">
             <div className="p-8 sm:p-12 bg-[#080808] border border-white/10 shadow-2xl relative">
               {isSubmitted ? (
                 /* Elegant Confirmation State strictly following prompt */

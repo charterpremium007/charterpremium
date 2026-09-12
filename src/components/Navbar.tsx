@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { OfficialLogo } from './OfficialLogo';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Instagram, Linkedin } from 'lucide-react';
 
 interface NavbarProps {
   onOpenEnquiry?: (prefilledInterest?: string) => void;
@@ -28,7 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
     { name: 'Mumbai', href: '#mumbai' },
     { name: 'Properties', href: '#properties' },
     { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Enquiry', href: '#enquiry-form' }
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -45,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
     if (onOpenEnquiry) {
       onOpenEnquiry();
     } else {
-      const contactSection = document.getElementById('contact');
+      const contactSection = document.getElementById('enquiry-form');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
       }
@@ -152,7 +152,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
               <ArrowUpRight className="w-4 h-4" />
             </button>
             <div className="flex items-center justify-between text-[11px] text-[#888888] tracking-wider pt-2">
-              <span>charterpremium.in</span>
+              <div className="flex items-center gap-4">
+                <a href="https://www.instagram.com/charter_premium/?hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-[#C5A059]">
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a href="https://www.linkedin.com/company/charter-premium/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="hover:text-[#C5A059]">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </div>
               <a href="mailto:info@charterpremium.in" className="hover:text-[#C5A059]">
                 info@charterpremium.in
               </a>

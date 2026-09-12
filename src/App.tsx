@@ -40,12 +40,12 @@ export default function App() {
     if (interest) {
       setPrefilledInterest(interest);
     }
-    scrollToSection('contact');
+    scrollToSection('enquiry-form');
   };
 
   const handleEnquireProperty = (property: Property) => {
     setPrefilledInterest(`${property.name} (${property.location})`);
-    scrollToSection('contact');
+    scrollToSection('enquiry-form');
   };
 
   return (

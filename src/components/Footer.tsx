@@ -1,6 +1,6 @@
 import React from 'react';
 import { OfficialLogo } from './OfficialLogo';
-import { ArrowUpRight, Mail, Phone } from 'lucide-react';
+import { ArrowUpRight, Mail, Phone, Instagram, Linkedin } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
     { name: 'Services', href: '#services' },
     { name: 'About', href: '#about' },
     { name: 'Mumbai', href: '#mumbai' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Enquiry', href: '#enquiry-form' }
   ];
 
   return (
@@ -57,6 +57,28 @@ export const Footer: React.FC = () => {
               >
                 <Mail className="w-4 h-4" />
                 <span>info@charterpremium.in</span>
+              </a>
+            </div>
+
+            {/* Social Links */}
+            <div className="pt-2 flex items-center gap-5">
+              <a
+                href="https://www.instagram.com/charter_premium/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#888888] hover:text-[#C5A059] transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/charter-premium/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#888888] hover:text-[#C5A059] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
