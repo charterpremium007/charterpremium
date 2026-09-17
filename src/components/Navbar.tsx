@@ -34,6 +34,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
+    if (window.location.pathname !== '/' && window.location.pathname !== '') {
+      window.location.href = `/${href}`;
+      return;
+    }
     const targetElement = document.querySelector(href);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
@@ -45,6 +49,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
     if (onOpenEnquiry) {
       onOpenEnquiry();
     } else {
+      if (window.location.pathname !== '/' && window.location.pathname !== '') {
+        window.location.href = '/#enquiry-form';
+        return;
+      }
       const contactSection = document.getElementById('enquiry-form');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -65,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
           {/* Brand & Logo - Clearly visible, elegant luxury brand mark */}
           <a
-            href="#"
+            href="/"
             id="nav-brand-link"
             className="flex items-center gap-3.5 group cursor-pointer focus:outline-none"
             aria-label="Charter Premium Home"
